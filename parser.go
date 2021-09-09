@@ -45,6 +45,14 @@ type MavenProject struct {
 	Build                Build                `xml:"build"`
 	PluginRepositories   []PluginRepository   `xml:"pluginRepositories>pluginRepository"`
 	Modules              []string             `xml:"modules>module"`
+	Repository DistributionManagement 	  `xml:"distributionManagement>repository"`
+	SnapshotRepository DistributionManagement `xml:"distributionManagement>snapshotRepository"`
+}
+
+type DistributionManagement struct {
+	Id    string `xml:"id"`
+	Name string `xml:"name"`
+	URL    string `xml:"url"`
 }
 
 // Represent the parent of the project
